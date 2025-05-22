@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalogue</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/auth.js"></script>
+  <script src="js/catalogue.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">📚 Ma Bibliothèque</div>
+    <nav>
+      <ul class="top-menu" id="topMenu"></ul>
+    </nav>
+    <div id="userInfo" class="user-info"></div>
+  </header>
+  <main>
+    <h1>Catalogue</h1>
+    <div class="filters">
+      <input id="searchInput" placeholder="Recherche...">
+      <select id="filterAuteur"></select>
+      <select id="filterGenre"></select>
+    </div>
+    <div id="booksGrid" class="books-grid"></div>
+  </main>
+</body>
+</html> 

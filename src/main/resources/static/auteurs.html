@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des auteurs</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/auth.js"></script>
+  <script src="js/auteurs.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">📚 Ma Bibliothèque</div>
+    <nav>
+      <ul class="top-menu" id="topMenu"></ul>
+    </nav>
+    <div id="userInfo" class="user-info"></div>
+  </header>
+  <main>
+    <h1>Auteurs</h1>
+    <button id="addAuteurBtn">Ajouter un auteur</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Nom</th><th>Date de naissance</th><th>Livres</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="auteursTableBody"></tbody>
+    </table>
+    <!-- Modal Auteur -->
+    <div id="auteurModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <form id="auteurForm">
+          <input type="hidden" id="auteurId">
+          <label>Nom <input id="nom" required></label>
+          <label>Biographie <textarea id="biographie"></textarea></label>
+          <label>Date de naissance <input type="date" id="dateDeNaissance"></label>
+          <button type="submit">Enregistrer</button>
+          <button type="button" id="cancelAuteur">Annuler</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html> 

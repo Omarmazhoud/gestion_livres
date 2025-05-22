@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des livres</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/auth.js"></script>
+  <script src="js/livres.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">📚 Ma Bibliothèque</div>
+    <nav>
+      <ul class="top-menu" id="topMenu"></ul>
+    </nav>
+    <div id="userInfo" class="user-info"></div>
+  </header>
+  <main>
+    <h1>Livres</h1>
+    <div class="filters">
+      <select id="filterDisponible">
+        <option value="all">Tous</option>
+        <option value="disponible">Disponibles</option>
+        <option value="emprunte">Empruntés</option>
+      </select>
+      <select id="filterAuteur"></select>
+      <select id="filterGenre"></select>
+      <button id="addLivreBtn">Ajouter un livre</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Titre</th><th>Auteur</th><th>Genre</th><th>ISBN</th><th>Disponibilité</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="livresTableBody"></tbody>
+    </table>
+    <!-- Modal Livre -->
+    <div id="livreModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <form id="livreForm">
+          <input type="hidden" id="livreId">
+          <label>Titre <input id="titre" required></label>
+          <label>Auteur <select id="auteurId"></select></label>
+          <label>Genre <select id="genreId"></select></label>
+          <label>ISBN <input id="isbn"></label>
+          <label>Disponibilité
+            <select id="disponible">
+              <option value="true">Disponible</option>
+              <option value="false">Emprunté</option>
+            </select>
+          </label>
+          <button type="submit">Enregistrer</button>
+          <button type="button" id="cancelLivre">Annuler</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html> 

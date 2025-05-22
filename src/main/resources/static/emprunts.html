@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des emprunts</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/auth.js"></script>
+  <script src="js/emprunts.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">📚 Ma Bibliothèque</div>
+    <nav>
+      <ul class="top-menu" id="topMenu"></ul>
+    </nav>
+    <div id="userInfo" class="user-info"></div>
+  </header>
+  <main>
+    <h1>Emprunts</h1>
+    <button id="addEmpruntBtn">Nouvel emprunt</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Livre</th><th>Utilisateur</th><th>Date emprunt</th><th>Date retour prévu</th><th>Statut</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="empruntsTableBody"></tbody>
+    </table>
+    <!-- Modal Emprunt -->
+    <div id="empruntModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <form id="empruntForm">
+          <input type="hidden" id="empruntId">
+          <label>Livre <select id="livreId"></select></label>
+          <label>Utilisateur <select id="utilisateurId"></select></label>
+          <label>Date d'emprunt <input type="date" id="dateEmprunt"></label>
+          <label>Date retour prévu <input type="date" id="dateRetourPrevu"></label>
+          <button type="submit">Enregistrer</button>
+          <button type="button" id="cancelEmprunt">Annuler</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html> 

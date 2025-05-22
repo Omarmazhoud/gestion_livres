@@ -1,0 +1,303 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(120deg, #f7f8fa 60%, #e0f2fe 100%);
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1100px;
+  margin: 3em auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px #0002;
+  padding: 2.5em 3.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  color: #16a34a;
+  letter-spacing: 1px;
+}
+
+.books-grid, .genres-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+.book-card, .genre-card {
+  background: #f1f5fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #0001;
+  padding: 2em 1.5em;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1 1 240px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.book-card:hover, .genre-card:hover {
+  box-shadow: 0 8px 32px #0002;
+  transform: translateY(-8px) scale(1.04);
+}
+
+.book-card h4, .genre-card h3 {
+  margin: 0.5em 0 0.2em 0;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.book-card p, .genre-card p {
+  margin: 0.2em 0;
+  color: #4ade80;
+  text-align: center;
+}
+
+.status-badge.available {
+  color: #16a34a;
+  background: #bbf7d0;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.2em 0.7em;
+}
+.status-badge.unavailable, .status-badge.late {
+  color: #dc2626;
+  background: #fee2e2;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.2em 0.7em;
+}
+
+/* Centrage du tableau des livres */
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 2em;
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0001;
+}
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 1em 0.7em;
+  text-align: center;
+}
+th {
+  background: #bbf7d0;
+  color: #16a34a;
+  font-size: 1.1em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  main {
+    padding: 1.5em 0.5em;
+  }
+  .book-card, .genre-card {
+    min-width: 160px;
+    max-width: 100%;
+    padding: 1em 0.5em;
+  }
+  table {
+    width: 100%;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    padding: 0.5em 0.5em;
+    text-align: center;
+  }
+  main {
+    padding: 0.5em 0.2em;
+  }
+  .books-grid, .genres-grid {
+    flex-direction: column;
+    gap: 1em;
+  }
+  table, th, td {
+    font-size: 0.85em;
+    padding: 0.5em 0.2em;
+  }
+}
+
+/* Modernisation des boutons */
+button, input[type="submit"] {
+  background: linear-gradient(90deg, #4ade80 60%, #16a34a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.7em 2em;
+  font-size: 1em;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #0001;
+}
+button:hover, input[type="submit"]:hover {
+  background: #16a34a;
+  transform: scale(1.04);
+}
+
+/* Modernisation des modals */
+.modal-content {
+  border-radius: 20px;
+  box-shadow: 0 8px 32px #0002;
+  padding: 2.5em 2em;
+}
+
+.toast {
+  background: #333;
+  color: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #16a34a 60%, #4ade80 100%);
+  color: #fff;
+  padding: 0.5em 2em;
+  box-shadow: 0 2px 8px #0002;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.top-menu {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.top-menu li { }
+.top-menu a, .top-menu button {
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: 2px solid #4ade80;
+  font-size: 1em;
+  padding: 0.5em 1.2em;
+  border-radius: 24px;
+  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  margin: 0 0.2em;
+  box-shadow: 0 2px 8px #0001;
+}
+.top-menu a:hover, .top-menu button:hover {
+  background: #4ade80;
+  color: #fff;
+  border: 2px solid #16a34a;
+  box-shadow: 0 4px 16px #16a34a33;
+}
+.user-info {
+  margin-left: 2em;
+  font-size: 1em;
+}
+.dashboard-cards {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+.card {
+  background: linear-gradient(135deg, #bbf7d0 60%, #4ade80 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 1.5em 2em;
+  text-align: center;
+  flex: 1;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-5px) scale(1.03); }
+.card h2 { margin: 0; font-size: 2.5em; color: #16a34a; }
+.card p { margin: 0.5em 0 0 0; color: #4ade80; }
+.modal { display: none; position: fixed; z-index: 10; left: 0; top: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.4); }
+.modal.active { display: flex; align-items: center; justify-content: center; }
+.close { position: absolute; right: 1em; top: 1em; cursor: pointer; font-size: 1.5em; }
+.filters { margin-bottom: 1.5em; display: flex; gap: 1em; }
+
+/* Alignement des genres (grille centrée et responsive) */
+.genres-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: flex-start;
+}
+.genre-card {
+  background: #f1f5fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #0001;
+  padding: 2em 1.5em;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1 1 240px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Modernisation des formulaires login/inscription */
+form {
+  background: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 2em 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  align-items: center;
+  max-width: 400px;
+  margin: 2em auto;
+}
+form label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #16a34a;
+  margin-bottom: 0.2em;
+}
+form input, form select, form textarea {
+  border: 1.5px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  margin-top: 0.2em;
+  outline: none;
+  transition: border 0.2s;
+  background: #fff;
+}
+form input:focus, form select:focus, form textarea:focus {
+  border: 1.5px solid #16a34a;
+}
+form button[type="submit"], form button:not([type]) {
+  margin-top: 1em;
+  width: 100%;
+} 

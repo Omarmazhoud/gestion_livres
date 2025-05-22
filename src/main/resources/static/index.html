@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de bord</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">📚 Ma Bibliothèque</div>
+    <nav>
+      <ul class="top-menu" id="topMenu"></ul>
+    </nav>
+    <div id="userInfo" class="user-info"></div>
+  </header>
+  <main>
+    <h1>Tableau de bord</h1>
+    <div class="dashboard-cards">
+      <div class="card"><h2 id="totalBooks">0</h2><p>Livres</p></div>
+      <div class="card"><h2 id="totalAuthors">0</h2><p>Auteurs</p></div>
+      <div class="card"><h2 id="totalGenres">0</h2><p>Genres</p></div>
+      <div class="card"><h2 id="totalLoans">0</h2><p>Emprunts</p></div>
+    </div>
+    <section>
+      <h2>Livres disponibles</h2>
+      <div id="availableBooks" class="books-grid"></div>
+    </section>
+  </main>
+</body>
+</html> 
